@@ -1,0 +1,434 @@
+
+//============================================================================================
+/**
+ * @file	arc_tool.dat
+ * @bfief	アーカイバ用テーブルデータ定義
+ * @author	HisashiSogabe
+ * @date	05.05.30
+ */
+//============================================================================================
+
+#ifndef	__ARC_TOOL_DAT_
+#define	__ARC_TOOL_DAT_
+
+//============================================================================================
+/**
+ *	file_kindに指定するdefine定義
+ */
+//============================================================================================
+
+enum{
+	ARC_WAZA_SEQ=0,		///< 技シーケンス
+	ARC_SUB_SEQ,		///< サーバシーケンス
+	ARC_PERSONAL,		///< ポケモンパーソナルデータ
+	ARC_GROW_TBL,		///< ポケモン成長テーブル
+	ARC_POKE_GRA,		///< ポケモングラフィック
+	ARC_POKE_HEIGHT,	///< ポケモン高さ情報
+	ARC_TRB_GRA,		///< トレーナーグラフィック（背面）
+	ARC_BATT_BG,		///< 戦闘背景グラフィック
+	ARC_WAZA_EFF,		///< 技エフェクト
+	ARC_WAZA_TBL,		///< 技テーブル
+	ARC_SCRIPT,			///< マップスクリプト
+	ARC_SCRIPT_MSG,		///< マップメッセージ
+	ARC_POKETCH_IMG,	///< ポケッチ画像
+	ARC_BAG_GRA,		///< バッグ画面グラフィック
+	ARC_FONT,			///< フォントグラフィック
+	ARC_ITEMDATA,		///< アイテムデータ
+	ARC_ITEMICON,		///< アイテムアイコン
+	ARC_TMAP_GRA,		///< タウンマップ2Dグラフィック
+	ARC_BOX_GRA,		///< ボックスグラフィック
+	ARC_POKEICON,		///< ポケモンアイコン
+	ARC_PLIST_GRA,		///< ポケモンリスト
+	ARC_WER_CHAR,		///< 技エフェクトキャラ
+	ARC_WER_PLTT,		///< 技エフェクトパレット
+	ARC_WER_CELL,		///< 技エフェクトセル
+	ARC_WER_CELLANM,	///< 技エフェクトセルアニメ
+	ARC_IMAGECLIP_GRA,	///< イメージクリップグラフィック
+	ARC_MSG,			///< メッセージデータ
+	ARC_BATT_OBJ,		///< 戦闘OBJグラフィック
+	ARC_UG_RADAR_GRA,	///< 炭鉱レーダー画面グラフィックデータ
+	ARC_WAZA_PARTICLE,	///< 技エフェクト用パーティクル
+	ARC_BE_SEQ,			///< 戦闘効果シーケンス
+	ARC_NAMEIN_GRA,		///< 名前入力画面グラフィックデータ
+	ARC_EVENTDATA,		///< ゾーン毎イベントデータ
+	ARC_WOTBL,			///< 技覚えテーブルデータ
+	ARC_EVO,			///< 進化テーブルデータ
+	ARC_FONTOAM,		///< OAMフォント描画システムセルデータ
+	ARC_FIELD_BOARD,	///< 看板
+	ARC_D_ENCOUNT,		///< ダイアバージョンエンカウントデータ
+	ARC_WINFRAME,		///< 各種ウィンドウのフレームグラフィック
+	ARC_PSTATUS_GRA,	///< ポケモンステータス画面グラフィック
+	ARC_3D_STRUCT,		///< 3D配置モデル
+	ARC_MAP_MATRIX,		///< マップマトリックス
+	ARC_AREA_DATA,		///< エリアデータ
+	ARC_AREA_BUILD_MODEL,	///< エリア内使用配置モデル
+	ARC_AREA_TEX_SET,		///< エリアテクスチャセット
+	ARC_CONTEST_BG,			///< コンテストBGグラフィック
+	ARC_CONTEST_OBJ,		///< コンテストOBJグラフィック
+	ARC_UGEFFECT_GRA,		///< 地下フェード用OBJグラフィック
+	ARC_TITLE_PL,				///< タイトル画面グラフィック
+	ARC_MMDL,				///< エリア別動作モデルリスト
+    ARC_UG_TRAP_GRA,        ///< 炭鉱罠グラフィックデータ
+	ARC_TR_CASE_GRA,        ///< トレーナーケースグラフィックデータ
+    ARC_UG_FOSSIL_GRA,      ///< 炭鉱化石グラフィックデータ
+    ARC_NTAG_GRA,			///< 木の実タグ画面グラフィックデータ
+	ARC_TRADELIST_GRA,		///< ポケモン交換リストグラフィックデータ
+    ARC_UG_PARTS_GRA,  	    ///< 炭鉱化石パーツグラフィックデータ
+    ARC_OPENING_GRA,		///< オープニンググラフィックデータ
+    ARC_TRDATA,				///< エンカウントトレーナーデータ
+    ARC_TRPOKE,				///< エンカウントトレーナー持ちポケモンデータ
+    ARC_TRTBL,				///< エンカウントトレーナーメッセージテーブルデータ
+	ARC_TRF_GRA,			///< トレーナーグラフィック（正面）
+	ARC_PARTICLE_DATA,		///< アプリ用パーティクル
+    ARC_SHOP_GRA,			///< ショップ画面グラフィック
+    ARC_WAZA_EFF_SUB,		///< 状態異常などのエフェクト用
+    ARC_UG_ANIM_GRA,	    ///< 地下化石掘りのアニメ
+    ARC_WEATHER_SYS_GRA,	///< 天気システムグラフィック
+	ARC_MENU_GRA,			///< メニューグラフィック
+	ARC_FIELD_MAP_DATA,		///< フィールドマップデータ
+	ARC_NUTSDATA,			///< 木の実データ
+	ARC_ZUKAN_GRA,			///< 図鑑グラフィックデータ
+	ARC_POKEFOOT_GRA,		///< ポケモン足跡グラフィックデータ
+	ARC_BM_TEX_SET,			///< 配置モデルテクスチャセット
+	ARC_BPLIST_GRA,			///< 戦闘用ポケモンリストグラフィック
+	ARC_CONFIG_GRA,			///< コンフィグ画面2Dリソース
+	ARC_UNIONROOM_GRA,		///< ユニオンルームサブ画面用グラフィック
+	ARC_ZUKAN_DATA,			///< 図鑑データ
+	ARC_PMSI_GRAPHIC,		///< 簡易会話入力画面グラフィックデータ
+	ARC_BBAG_GRA,			///< 戦闘用バッググラフィック
+	ARC_OEKAKI_GRA,			///< お絵かきボードグラフィック
+	ARC_MAIL_GRA,			///< メール画面グラフィックデータ
+	ARC_FNOTE_GRA,			///< 冒険ノート画面グラフィック
+	ARC_MMODEL,				///< フィールドOBJ動作モデルグラフィックデータ
+	ARC_EV_POKESELECT_GRA,	///< ポケモンセレクト画面
+	ARC_PORUTO_GRA,			///< ポルトケース画面グラフィック
+	ARC_TOUCH_SUBWINDOW_GRA,///< サブ画面　触れるウィンドウグラフィック
+	ARC_FLDCOMACT_GRA,		///< フィールドコモンアクター
+	ARC_RECORD_GRA,			///< レコードコーナー用画像データ
+	ARC_PORUDEMO_GRA,		///< ポルトデモグラフィック
+	ARC_PORUACT_GRA,		///< ポルトOAMグラフィック
+	ARC_WIFINOTE_GRA,       ///< WIFIともだち手帳グラフィック
+	ARC_CONTEST_DATA,		///< コンテスト用外部データ
+	ARC_CUSTOM_BALL_GRA,	///< カスタムボール用
+	ARC_WIFIP2PMATCH_GRA,       ///< WIFIP2Pマッチンググラフィック
+	ARC_DEMO_TRADE_GRA,		///< ポケモン交換デモグラフィック
+	ARC_POKE_ANM,			///<ポケモンアニメ
+	ARC_MYSIGN_GRA,			///<自分サイン作成画面グラフィック
+	ARC_MMODEL_LIST,		///<動作モデル割り振りデータ
+	ARC_FIELD_CUTIN_GRA,	///<フィールドカットイングラフィック
+	ARC_FIELD_DEMO_CLI_GRA,	///<climaxデモグラフィックデータ
+	ARC_BALL_PARTICLE,		///< ボールエフェクト用パーティクル
+	ARC_SAMPLE_PARTICLE,	///< エフェクト用パーティクル
+	ARC_DENDOU_PC_GRA,		///< 殿堂入りPC画面グラフィック
+	ARC_WIFI_EARCH_PLACE,	///< WI-FI地球画面の地域データ
+	ARC_TR_AI,				///< トレーナーAI
+	ARC_WORLDTRADE_GRA,		///< wifi世界交換グラフィック
+	ARC_DENDOU_DEMO,		///< 殿堂入りデモグラフィック
+	ARC_ENCDATA_EX,			///< 特殊エンカウント関連
+	ARC_FLDEFF,				///< フィールドエフェクト関連
+	ARC_VS_DEMO_GRA,		///< 通信対戦開始デモグラフィック
+	ARC_POKE_ZUKAN,			///< 全国図鑑ナンバーからシンオウ図鑑ナンバーを引くテーブル
+	ARC_BM_ANM,				///< 3Ｄモデリングデータアニメ
+	ARC_BM_ANM_LIST,		///< 3Ｄモデリングデータアニメリスト
+	ARC_ENCOUNTEFFECT,		///< エンカウントエフェクト
+	ARC_WAZAOSHIE_GRA,		///< 技教え/思い出し画面グラフィック
+	ARC_POKE_ANM_TBL,		///< ポケモンアニメーションテーブル
+	ARC_FIELD_TRADE_POKE,	///< ゲーム内ポケモン交換データ
+	ARC_MYSTERY_GRA,		///< ふしぎなできごと用画像データ
+	ARC_OTHER_POKE,			///< 複数フォルムを持つポケモングラフィックデータ
+	ARC_EGGDEMO_GRA,		///< たまごデモ
+	ARC_EGGDEMO_PARTICLE,	///< たまごデモ
+	ARC_SHIP_DEMO,			///< 船デモ
+	ARC_OTHER_HEIGHT,		///< 複数フォルムを持つポケモンの高さ情報
+	ARC_NUTMIXER_GRA,		///< 木の実ミキサー　画像
+	ARC_BTOWER_APP,			///< バトルタワーアプリ2Dグラフィック
+	ARC_SHINKA_DEMO,		///< 進化デモパーティクル
+	ARC_INTRO,				///< 新規開始導入部
+	ARC_TV,					///< テレビ番組データ
+	ARC_ENDING,				///< エンディングデモグラフィック
+	ARC_OP_DEMO,			///< オープニングデモ
+	ARC_WIFI_EARTH,			///< WI-FI地球画面
+	ARC_RANKING_GRA,		///< ギネスランキング画像
+	ARC_PPARK_DATA,			///< ポケパーク用得点データなど
+	ARC_SYOUJYOU,			///< 表彰状
+	ARC_SLOT,				///< ミニゲーム　スロット
+	ARC_BTD_TR,				///< バトルタワートレーナーデータ
+	ARC_BTD_PM,				///< バトルタワーポケモンデータ
+	ARC_INTRO_TV,			///< 新規開始導入部(TV)
+	ARC_TRTBL_OFS,			///< トレーナーメッセージ検索用テーブル
+	ARC_POKE_YOFS,			///< ポケモン高さ情報
+	ARC_ZUKAN_ENC_DIAMOND,	///< ダイヤエンカウント図鑑データ
+	ARC_ZUKAN_ENC_PEARL,	///< パールエンカウント図鑑データ
+	ARC_HIDEN_EFFECT,		///< フィールド秘伝技エフェクトグラフィック
+	ARC_POKE_SHADOW,		///< ポケモン影サイズ
+	ARC_P_ENCOUNT,			///< パールバージョンエンカウントデータ
+	ARC_POKE_SHADOW_OFX,	///< ポケモン影Xオフセット
+	ARC_SHIN_ZUKAN,			///< シンオウ図鑑ナンバーから全国図鑑ナンバーを取得
+	
+	ARC_WIFI2DCHAR,			///< wifi上で出すキャラクターグラフィック
+	ARC_PM_EDIT,			///< ポケモン編集データ
+	
+	ARC_TEST_FILE,			///< テスト用ファイルアーカイブ
+
+	ARC_FRONTIER_SCRIPT,	///< フロンティアスクリプト
+	ARC_FRONTIER_BG,		///< フロンティアグラフィックBG
+	ARC_FRONTIER_OBJ,		///< フロンティアグラフィックOBJ
+
+	ARC_CB_EDIT,			///< オリジナルカスタムボール
+	ARC_WIFIUNIONCHAR,		///< wifi上で出すユニオンルームのキャラクターグラフィック
+	ARC_GURU2,				///< ぐるぐる交換
+	ARC_FIELD_TRANS_ANIME,	///< フィールドVRAM転送アニメーション用データ
+	
+	ARC_SHIP_DEMO_PL,		///< 船デモ ガリンコ号
+	ARC_FRONTIER_PARTICLE,	///< フロンティア用パーティクルデータ
+	ARC_BUCKET_GRAPHIC,		///< WiFiバケットミニゲームグラフィック
+	ARC_CODE_GRA,			///< コード入力用
+	ARC_AREA_WIN_GRA,		///< マップウィンドウ
+	ARC_PL_ENCOUNT,			///< プラチナバージョンエンカウントデータ
+	ARC_BR_GRA,				///< バトルレコーダー
+	ARC_WORLDTIMER,			///< 世界時計グラフィック
+	ARC_BALANCE_BALL_GRA,	///< 玉乗り
+	ARC_DP_POKE_GRA,		///< 「ポケモングラフィック」(DPグラフィック)
+	ARC_DP_OTHER_POKE,		///< 「複数フォルムを持つポケモングラフィックデータ」(DPグラフィック)
+	ARC_DP_POKE_HEIGHT,		///< ポケモン高さ情報(DPグラフィック)
+	ARC_DP_OTHER_HEIGHT,	///< 複数フォルムを持つポケモンの高さ情報(DPグラフィック)
+	ARC_LOBBY_NEWS,			///< WiFiロビーニュースグラフィック
+	ARC_EMAIL_GRA,			///< E-Mail
+	ARC_WLMNGM_TOOL_GRA,	///< WiFiロビーミニゲームツールグラフィック
+	ARC_DEMO_TENGAN_GRA,	///< テンガンザンデモ
+	ARC_BALLOON_GRA,		///< 風船割り2Dグラフィック
+	ARC_WFLBY_MAP,			///< WiFiロビーマップデータ
+	ARC_WFLBY_GRA,			///< WiFiロビーグラフィックデータ
+	ARC_FIELD_LIGHT,		///< フィールドライトテーブルデータ
+	ARC_UGROUNDEFF_DATA,	///< 地下えっふぇくと
+	ARC_PL_BTD_TR,			///< プラチナ用バトルタワートレーナーデータ
+	ARC_PL_BTD_PM,			///< プラチナ用バトルタワーポケモンデータ
+	ARC_PL_STAGE_PM,		///< プラチナ用バトルステージポケモンデータ
+	ARC_TWORLD,				///< やぶれたせかい
+	ARC_TWORLD_ATTR,		///< やぶれたせかい　アトリビュート
+	ARC_TWORLD_ETC,			///< やぶれたせかい　その他データ
+	ARC_SCRATCH,			///< スクラッチ
+	ARC_POKELIST_PARTICLE,	///< ポケモンリスト用パーティクルデータ
+	ARC_WIFILOBBY_OTHER_GRA,///< Wi-Fiロビー３Dフィールド以外のグラフィック
+	ARC_FOOTPRINT_GRA,		///< 足跡ボードグラフィック
+	ARC_ZUKAN_ENC_PLATINUM,	///< プラチナエンカウント図鑑データ
+	ARC_BUCKET_DATA,		///< タマ投げデータ
+	ARC_PL_ETC_PARTICLE,	///< 色々なシーンで使用するパーティクルデータ
+	ARC_PMS_AIKOTOBA_DATA,	///< あいことば簡易会話単語テーブル
+	ARC_2DUNIONOBJ_FRONT,	///< 2dユニオンオブジェ	表向きのみのデータ
+	ARC_LIBRARY_TV,			///< 図書館TV
+	ARC_ZUKAN_DATA_GIRA,	///< 図鑑データ	ギラティナアナザーフォルム用
+};
+
+#ifdef	__ARC_TOOL_DAT_TBL_
+
+//============================================================================================
+/**
+ * アーカイブファイルのテーブル定義
+ */
+//============================================================================================
+// pokeplatinum_us.nds
+static const char*	ArchiveFileTable[]={
+	{"battle/skill/waza_seq.narc"},
+	{"battle/skill/sub_seq.narc"},
+	{"poketool/personal/pl_personal.narc"},
+	{"poketool/personal/pl_growtbl.narc"},
+	{"poketool/pokegra/pl_pokegra.narc"},
+	{"poketool/pokegra/height.narc"},
+	{"poketool/trgra/trbgra.narc"},
+	{"battle/graphic/pl_batt_bg.narc"},
+	{"wazaeffect/we.arc"},
+	{"poketool/waza/pl_waza_tbl.narc"},
+	{"fielddata/script/scr_seq.narc"},
+	{"msgdata/scenario/scr_msg.narc"},
+	{"graphic/poketch.narc"},
+	{"graphic/pl_bag_gra.narc"},
+	{"graphic/pl_font.narc"},
+	{"itemtool/itemdata/pl_item_data.narc"},
+	{"itemtool/itemdata/item_icon.narc"},
+	{"graphic/tmap_gra.narc"},
+	{"graphic/box.narc"},
+	{"poketool/icongra/pl_poke_icon.narc"},
+	{"graphic/pl_plist_gra.narc"},
+	{"wazaeffect/effectclact/wechar.narc"},
+	{"wazaeffect/effectclact/wepltt.narc"},
+	{"wazaeffect/effectclact/wecell.narc"},
+	{"wazaeffect/effectclact/wecellanm.narc"},
+	{"graphic/imageclip.narc"},
+	{"msgdata/pl_msg.narc"},
+	{"battle/graphic/pl_batt_obj.narc"},
+	{"data/underg_radar.narc"},
+	{"wazaeffect/effectdata/waza_particle.narc"},
+	{"battle/skill/be_seq.narc"},
+	{"data/namein.narc"},
+	{"fielddata/eventdata/zone_event.narc"},
+	{"poketool/personal/wotbl.narc"},
+	{"poketool/personal/evo.narc"},
+	{"graphic/fontoam.narc"},
+	{"graphic/field_board.narc"},
+	{"fielddata/encountdata/d_enc_data.narc"},
+	{"graphic/pl_winframe.narc"},
+	{"graphic/pl_pst_gra.narc"},
+	{"fielddata/build_model/build_model.narc"},
+	{"fielddata/mapmatrix/map_matrix.narc"},
+	{"fielddata/areadata/area_data.narc"},
+	{"fielddata/areadata/area_build_model/area_build.narc"},
+	{"fielddata/areadata/area_map_tex/map_tex_set.narc"},
+	{"contest/graphic/contest_bg.narc"},
+	{"contest/graphic/contest_obj.narc"},
+	{"data/ugeffect_obj_graphic.narc"},
+	{"demo/title/titledemo.narc"},
+	{"fielddata/areadata/area_move_model/move_model_list.narc"},
+	{"data/ug_trap.narc"},
+	{"graphic/trainer_case.narc"},
+	{"data/ug_fossil.narc"},
+	{"graphic/ntag_gra.narc"},
+	{"data/tradelist.narc"},
+	{"data/ug_parts.narc"},
+	{"graphic/opening.narc"},
+	{"poketool/trainer/trdata.narc"},
+	{"poketool/trainer/trpoke.narc"},
+	{"poketool/trmsg/trtbl.narc"},
+	{"poketool/trgra/trfgra.narc"},
+	{"particledata/particledata.narc"},
+	{"graphic/shop_gra.narc"},
+	{"wazaeffect/we_sub.narc"},
+	{"data/ug_anim.narc"},
+	{"data/weather_sys.narc"},
+	{"graphic/menu_gra.narc"},
+	{"fielddata/land_data/land_data.narc"},
+	{"itemtool/itemdata/nuts_data.narc"},
+	{"resource/eng/zukan/zukan.narc"},
+	{"poketool/pokefoot/pokefoot.narc"},
+	{"fielddata/areadata/area_build_model/areabm_texset.narc"},
+	{"battle/graphic/pl_b_plist_gra.narc"},
+	{"graphic/config_gra.narc"},
+	{"graphic/unionroom.narc"},
+	{"application/zukanlist/zkn_data/zukan_data.narc"},
+	{"graphic/pmsi.narc"},
+	{"battle/graphic/b_bag_gra.narc"},
+	{"graphic/oekaki.narc"},
+	{"graphic/mail_gra.narc"},
+	{"graphic/f_note_gra.narc"},
+	{"data/mmodel/mmodel.narc"},
+	{"graphic/ev_pokeselect.narc"},
+	{"graphic/poru_gra.narc"},
+	{"graphic/touch_subwindow.narc"},
+	{"graphic/fld_comact.narc"},
+	{"graphic/record.narc"},
+	{"graphic/porudemo.narc"},
+	{"graphic/poruact.narc"},
+	{"graphic/pl_wifinote.narc"},
+	{"contest/data/contest_data.narc"},
+	{"application/custom_ball/data/cb_data.narc"},
+	{"data/wifip2pmatch.narc"},
+	{"graphic/demo_trade.narc"},
+	{"pokeanime/pl_poke_anm.narc"},
+	{"graphic/mysign.narc"},
+	{"fielddata/mm_list/move_model_list.narc"},
+	{"data/field_cutin.narc"},
+	{"data/demo_climax.narc"},
+	{"wazaeffect/effectdata/ball_particle.narc"},
+	{"wazaeffect/pt_debug/debug_particle.narc"},
+	{"graphic/dendou_pc.narc"},
+	{"application/wifi_earth/wifi_earth_place.narc"},
+	{"battle/tr_ai/tr_ai_seq.narc"},
+	{"graphic/worldtrade.narc"},
+	{"graphic/dendou_demo.narc"},
+	{"arc/encdata_ex.narc"},
+	{"data/mmodel/fldeff.narc"},
+	{"battle/graphic/vs_demo_gra.narc"},
+	{"poketool/pl_pokezukan.narc"},
+	{"arc/bm_anime.narc"},
+	{"arc/bm_anime_list.narc"},
+	{"graphic/field_encounteffect.narc"},
+	{"graphic/waza_oshie_gra.narc"},
+	{"poketool/pokeanm/pl_pokeanm.narc"},
+	{"fielddata/pokemon_trade/fld_trade.narc"},
+	{"graphic/mystery.narc"},
+	{"poketool/pokegra/pl_otherpoke.narc"},
+	{"demo/egg/data/egg_data.narc"},
+	{"demo/egg/data/particle/egg_demo_particle.narc"},
+	{"arc/ship_demo.narc"},
+	{"poketool/pokegra/height_o.narc"},
+	{"graphic/nutmixer.narc"},
+	{"graphic/btower.narc"},
+	{"demo/shinka/data/particle/shinka_demo_particle.narc"},
+	{"demo/intro/intro.narc"},
+	{"arc/tv.narc"},
+	{"graphic/ending.narc"},
+	{"demo/title/op_demo.narc"},
+	{"application/wifi_earth/wifi_earth.narc"},
+	{"graphic/ranking.narc"},
+	{"arc/ppark.narc"},
+	{"demo/syoujyou/syoujyou.narc"},
+	{"data/slot.narc"},
+	{"battle/b_tower/btdtr.narc"},
+	{"battle/b_tower/btdpm.narc"},
+	{"demo/intro/intro_tv.narc"},
+	{"poketool/trmsg/trtblofs.narc"},
+	{"poketool/pokegra/poke_yofs.narc"},
+	{"application/zukanlist/zkn_data/zukan_enc_diamond.narc"},
+	{"application/zukanlist/zkn_data/zukan_enc_pearl.narc"},
+	{"graphic/hiden_effect.narc"},
+	{"poketool/pokegra/poke_shadow.narc"},
+	{"fielddata/encountdata/p_enc_data.narc"},
+	{"poketool/pokegra/poke_shadow_ofx.narc"},
+	{"poketool/shinzukan.narc"},
+	{"graphic/wifi2dchar.narc"},
+	{"poketool/poke_edit/pl_poke_data.narc"},
+	{"debug/cb_edit/d_test.narc"},
+	{"frontier/script/fr_script.narc"},
+	{"resource/eng/frontier_graphic/frontier_bg.narc"},
+	{"resource/eng/frontier_graphic/frontier_obj.narc"},
+	{"application/custom_ball/edit/pl_cb_data.narc"},
+	{"graphic/wifi_unionobj.narc"},
+	{"data/guru2.narc"},
+	{"data/fldtanime.narc"},
+	{"arc/ship_demo_pl.narc"},
+	{"particledata/pl_frontier/frontier_particle.narc"},
+	{"graphic/bucket.narc"},
+	{"arc/codein_gra.narc"},
+	{"arc/area_win_gra.narc"},
+	{"fielddata/encountdata/pl_enc_data.narc"},
+	{"resource/eng/batt_rec/batt_rec_gra.narc"},
+	{"graphic/worldtimer.narc"},
+	{"arc/manene.narc"},
+	{"poketool/pokegra/pokegra.narc"},
+	{"poketool/pokegra/otherpoke.narc"},
+	{"poketool/pokegra/dp_height.narc"},
+	{"poketool/pokegra/dp_height_o.narc"},
+	{"graphic/lobby_news.narc"},
+	{"arc/email_gra.narc"},
+	{"resource/eng/wifi_lobby_minigame/wlmngm_tool.narc"},
+	{"arc/demo_tengan_gra.narc"},
+	{"application/balloon/graphic/balloon_gra.narc"},
+	{"application/wifi_lobby/map_conv/wflby_map.narc"},
+	{"graphic/wifi_lobby.narc"},
+	{"data/arealight.narc"},
+	{"data/ugroundeffect.narc"},
+	{"battle/b_pl_tower/pl_btdtr.narc"},
+	{"battle/b_pl_tower/pl_btdpm.narc"},
+	{"battle/b_pl_stage/pl_bsdpm.narc"},
+	{"fielddata/tornworld/tw_arc.narc"},
+	{"fielddata/tornworld/tw_arc_attr.narc"},
+	{"data/tw_arc_etc.narc"},
+	{"resource/eng/scratch/scratch.narc"},
+	{"particledata/pl_pokelist/pokelist_particle.narc"},
+	{"graphic/wifi_lobby_other.narc"},
+	{"graphic/footprint_board.narc"},
+	{"application/zukanlist/zkn_data/zukan_enc_platinum.narc"},
+	{"application/bucket/ballslow_data.narc"},
+	{"particledata/pl_etc/pl_etc_particle.narc"},
+	{"resource/eng/pms_aikotoba/pms_aikotoba.narc"},
+	{"graphic/unionobj2d_onlyfront.narc"},
+	{"graphic/library_tv.narc"},
+	{"application/zukanlist/zkn_data/zukan_data_gira.narc"},
+};
+
+#endif	__ARC_TOOL_DAT_TBL_
+
+#endif	__ARC_TOOL_DAT_
+
+
+
